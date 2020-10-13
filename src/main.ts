@@ -1,6 +1,6 @@
-import * as cdk from '@aws-cdk/core';
 import * as ec2 from '@aws-cdk/aws-ec2';
 import * as eks from '@aws-cdk/aws-eks';
+import * as cdk from '@aws-cdk/core';
 import * as cdk8s from 'cdk8s';
 import { MyChart } from './my-chart';
 
@@ -15,14 +15,14 @@ export class MyStack extends cdk.Stack {
     const cluster = new eks.Cluster(this, 'Cluster', {
       vpc,
       version: eks.KubernetesVersion.V1_17,
-    })
+    });
 
     // create a cdk8s chart and use `cdk8s.App` as the scope.
     const cdk8sApp = new cdk8s.App();
-    const myChart = new MyChart(cdk8sApp, 'MyChart', { 
+    const myChart = new MyChart(cdk8sApp, 'MyChart', {
       image: 'pahud/amazon-ecs-flask-sample',
       region: stack.region,
-     });
+    });
 
     // add the cdk8s chart to the cluster
     cluster.addCdk8sChart('my-chart', myChart);

@@ -2,7 +2,6 @@
 
 Reference architecture for building load-balanced web services in Amazon EKS with AWS CDK and CDK8S.
 
-
 # High Level Architecture
 
 ![](./images/cdk-diagram.png)

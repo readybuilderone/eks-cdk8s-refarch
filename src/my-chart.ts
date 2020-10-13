@@ -1,6 +1,6 @@
-import * as constructs from 'constructs';
 import * as cdk8s from 'cdk8s';
 import * as kplus from 'cdk8s-plus';
+import * as constructs from 'constructs';
 
 export interface MyChartProps {
   readonly image: string;
@@ -19,16 +19,16 @@ export class MyChart extends cdk8s.Chart {
             new kplus.Container({
               image: props.image,
               env: {
-                PLATFORM: { value: props.region }
-              }
-            })
-          ]
-        }
-      }
+                PLATFORM: { value: props.region },
+              },
+            }),
+          ],
+        },
+      },
     });
     this.service = deploy.expose({
       port: 80,
       serviceType: kplus.ServiceType.LOAD_BALANCER,
-    })
+    });
   }
 }
