@@ -1,4 +1,4 @@
-# eks-cdk8s-refarch
+# cdk-eks-cdk8s-refarch
 
 Reference architecture for building load-balanced web services in Amazon EKS with AWS CDK and CDK8S.
 
