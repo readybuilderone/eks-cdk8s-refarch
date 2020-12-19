@@ -1,10 +1,9 @@
 const {
   AwsCdkTypeScriptApp,
-  Semver,
 } = require('projen');
 
 const project = new AwsCdkTypeScriptApp({
-  cdkVersion: "1.67.0",
+  cdkVersion: "1.77.0",
   name: "eks-demo",
   cdkDependencies: [
     '@aws-cdk/aws-ec2',
