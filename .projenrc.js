@@ -8,13 +8,12 @@ const project = new AwsCdkTypeScriptApp({
   cdkDependencies: [
     '@aws-cdk/aws-ec2',
     '@aws-cdk/aws-eks',
+  ],
+  deps: [
+    'cdk8s',
+    'cdk8s-plus',
+    'constructs',
   ]
-});
-
-project.addDependencies({
-  'cdk8s': Semver.caret('0.30.0'),
-  'cdk8s-plus': Semver.caret('0.30.0'),
-  'constructs': Semver.caret('3.0.4'),
 });
 
 
