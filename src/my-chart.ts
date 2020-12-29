@@ -13,21 +13,16 @@ export class MyChart extends cdk8s.Chart {
     super(scope, id);
 
     const deploy = new kplus.Deployment(this, 'Deployment', {
-      spec: {
-        podSpecTemplate: {
-          containers: [
-            new kplus.Container({
-              image: props.image,
-              env: {
-                PLATFORM: { value: props.region },
-              },
-            }),
-          ],
-        },
-      },
+      containers: [
+        new kplus.Container({
+          image: props.image,
+          env: {
+            PLATFORM: { value: props.region },
+          },
+        }),
+      ],
     });
-    this.service = deploy.expose({
-      port: 80,
+    this.service = deploy.expose(80, {
       serviceType: kplus.ServiceType.LOAD_BALANCER,
     });
   }

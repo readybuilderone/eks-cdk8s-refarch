@@ -645,11 +645,11 @@ Object {
           "Fn::Join": Array [
             "",
             Array [
-              "[{\\"apiVersion\\":\\"apps/v1\\",\\"kind\\":\\"Deployment\\",\\"metadata\\":{\\"name\\":\\"mychart-deployment-pod-a369a65d\\",\\"labels\\":{\\"aws.cdk.eks/prune-c834576327349001445893ceb1c3f5d7592a4cbdee\\":\\"\\"}},\\"spec\\":{\\"replicas\\":1,\\"selector\\":{\\"matchLabels\\":{\\"cdk8s.deployment\\":\\"MyChartDeployment209A97E0\\"}},\\"template\\":{\\"metadata\\":{\\"labels\\":{\\"cdk8s.deployment\\":\\"MyChartDeployment209A97E0\\"}},\\"spec\\":{\\"containers\\":[{\\"env\\":[{\\"name\\":\\"PLATFORM\\",\\"value\\":\\"",
+              "[{\\"apiVersion\\":\\"apps/v1\\",\\"kind\\":\\"Deployment\\",\\"metadata\\":{\\"name\\":\\"mychart-deployment-03fe336e\\",\\"labels\\":{\\"aws.cdk.eks/prune-c834576327349001445893ceb1c3f5d7592a4cbdee\\":\\"\\"}},\\"spec\\":{\\"replicas\\":1,\\"selector\\":{\\"matchLabels\\":{\\"cdk8s.deployment\\":\\"MyChart-Deployment-dd342b12\\"}},\\"template\\":{\\"metadata\\":{\\"labels\\":{\\"cdk8s.deployment\\":\\"MyChart-Deployment-dd342b12\\"}},\\"spec\\":{\\"containers\\":[{\\"env\\":[{\\"name\\":\\"PLATFORM\\",\\"value\\":\\"",
               Object {
                 "Ref": "AWS::Region",
               },
-              "\\"}],\\"image\\":\\"public.ecr.aws/d7p2r8s3/flask-docker-sample\\",\\"imagePullPolicy\\":\\"Always\\",\\"name\\":\\"main\\",\\"ports\\":[],\\"volumeMounts\\":[]}],\\"volumes\\":[]}}}},{\\"apiVersion\\":\\"v1\\",\\"kind\\":\\"Service\\",\\"metadata\\":{\\"name\\":\\"mychart-deployment-service-pod-ccc95eec\\",\\"labels\\":{\\"aws.cdk.eks/prune-c834576327349001445893ceb1c3f5d7592a4cbdee\\":\\"\\"}},\\"spec\\":{\\"externalIPs\\":[],\\"ports\\":[{\\"port\\":80}],\\"selector\\":{\\"cdk8s.deployment\\":\\"MyChartDeployment209A97E0\\"},\\"type\\":\\"LoadBalancer\\"}}]",
+              "\\"}],\\"image\\":\\"public.ecr.aws/pahudnet/flask-docker-sample\\",\\"imagePullPolicy\\":\\"Always\\",\\"name\\":\\"main\\",\\"ports\\":[],\\"volumeMounts\\":[]}],\\"volumes\\":[]}}}},{\\"apiVersion\\":\\"v1\\",\\"kind\\":\\"Service\\",\\"metadata\\":{\\"name\\":\\"mychart-deployment-service-pod-ccc95eec\\",\\"labels\\":{\\"aws.cdk.eks/prune-c834576327349001445893ceb1c3f5d7592a4cbdee\\":\\"\\"}},\\"spec\\":{\\"externalIPs\\":[],\\"ports\\":[{\\"port\\":80}],\\"selector\\":{\\"cdk8s.deployment\\":\\"MyChart-Deployment-dd342b12\\"},\\"type\\":\\"LoadBalancer\\"}}]",
             ],
           ],
         },
