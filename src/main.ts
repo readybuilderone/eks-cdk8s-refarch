@@ -1,8 +1,11 @@
 import * as ec2 from '@aws-cdk/aws-ec2';
 import * as eks from '@aws-cdk/aws-eks';
 import * as cdk from '@aws-cdk/core';
+import { Patch } from 'awscdk-81-patch';
 import * as cdk8s from 'cdk8s';
 import { MyChart } from './my-chart';
+
+Patch.apply();
 
 export class MyStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: cdk.StackProps = {}) {
@@ -14,7 +17,7 @@ export class MyStack extends cdk.Stack {
 
     const cluster = new eks.Cluster(this, 'Cluster', {
       vpc,
-      version: eks.KubernetesVersion.V1_17,
+      version: eks.KubernetesVersion.V1_18,
     });
 
     // create a cdk8s chart and use `cdk8s.App` as the scope.
