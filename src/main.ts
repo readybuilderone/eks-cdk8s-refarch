@@ -1,11 +1,9 @@
 import * as ec2 from '@aws-cdk/aws-ec2';
 import * as eks from '@aws-cdk/aws-eks';
 import * as cdk from '@aws-cdk/core';
-import { Patch } from 'awscdk-81-patch';
 import * as cdk8s from 'cdk8s';
 import { MyChart } from './my-chart';
 
-Patch.apply();
 
 export class MyStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: cdk.StackProps = {}) {
