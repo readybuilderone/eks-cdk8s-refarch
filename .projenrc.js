@@ -15,6 +15,7 @@ const project = new AwsCdkTypeScriptApp({
     'constructs',
   ],
   dependabot: false,
+  defaultReleaseBranch: ['master'],
 });
 
 // create a custom projen and yarn upgrade workflow
