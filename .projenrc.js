@@ -1,5 +1,4 @@
-const { AwsCdkTypeScriptApp } = require('projen');
-const { Automation } = require('projen-automate-it');
+const { AwsCdkTypeScriptApp, DependenciesUpgradeMechanism } = require('projen');
 
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
@@ -16,17 +15,18 @@ const project = new AwsCdkTypeScriptApp({
     'constructs',
     'projen-automate-it',
   ],
-  dependabot: false,
-  defaultReleaseBranch: 'master',
+  depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
+    workflowOptions: {
+      labels: ['auto-approve', 'auto-merge'],
+      secret: AUTOMATION_TOKEN,
+    },
+  }),
+  autoApproveOptions: {
+    secret: 'GITHUB_TOKEN',
+    allowedUsernames: ['pahud'],
+  },
+  defaultReleaseBranch: 'main',
 });
-
-
-const automation = new Automation(project, {
-  automationToken: AUTOMATION_TOKEN,
-});
-automation.autoApprove();
-automation.autoMerge();
-automation.projenYarnUpgrade();
 
 
 const common_exclude = ['cdk.out', 'cdk.context.json', 'yarn-error.log'];
